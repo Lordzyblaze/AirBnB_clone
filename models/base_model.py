@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Our BaseModel that defines all common attributes/methods for other classes
+
+"""
+Our BaseModel that defines all common attributes/methods for other classes
+
 """
 import uuid
 from datetime import datetime
@@ -7,9 +10,16 @@ import models
 
 
 class BaseModel():
-    """The main class"""
+
+    """
+    The main class
+
+    """
     def __init__(self, *args, **kwargs):
-        """Constructor of the instance. Uses kwargs if not empty"""
+        """
+        Constructor of the instance. Uses kwargs if not empty
+
+        """
         if kwargs:
             for key, value in kwargs.items():
                 if key == "__class__":
@@ -34,13 +44,17 @@ class BaseModel():
 
     def save(self):
         """Updates the public instance attribute
-        updated_at with the current date and time"""
+        updated_at with the current date and time
+
+        """
         self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
         """Returns a dictionary containing
-        all the __dict__ keys / values of the instance"""
+        all the __dict__ keys / values of the instance
+
+        """
         my_dict = self.__dict__.copy()
         my_dict.update({"__class__": self.__class__.__name__})
         my_dict.update({"created_at": self.created_at.isoformat()})
