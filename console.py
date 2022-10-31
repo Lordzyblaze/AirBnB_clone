@@ -53,7 +53,6 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             my_object = eval(my_list[0] + '()')
-
             for i in range(1, len(my_list)):
                 res = my_list[i].split('=')
                 res[1] = res[1].replace('_', ' ')
@@ -62,13 +61,9 @@ class HBNBCommand(cmd.Cmd):
             my_object.save()
             print(my_object.id)
 
-
     def do_show(self, args):
-        """
-        Prints the string representation of an instance
-        based on the class name and id
-
-        """
+        """Prints the string representation of an instance
+        based on the class name and id"""
         list_str = args.split()
         if not list_str:
             print("** class name missing **")
@@ -83,10 +78,8 @@ class HBNBCommand(cmd.Cmd):
                 print(objects[instance])
             else:
                 print("** no instance found **")
-
     def do_destroy(self, args):
-        """
-        Deletes an instance based on the class name and id
+        """Deletes an instance based on the class name and id
         (save the change into the JSON file)
 
         """
@@ -105,7 +98,6 @@ class HBNBCommand(cmd.Cmd):
                 models.storage.save()
             else:
                 print("** no instance found **")
-
     def do_all(self, args):
         """
         Prints all string representation of all instances
@@ -118,10 +110,10 @@ class HBNBCommand(cmd.Cmd):
             objects = models.storage.all()
             for instance in objects.values():
                 str_list.append(instance.__str__())
-            print(str_list)
+            print (str_list)
         else:
             print("** class doesn't exist **")
-
+    
 
     def do_update(self, args):
         """
@@ -153,12 +145,12 @@ class HBNBCommand(cmd.Cmd):
                 setattr(value, list_str[2], list_str[3])
                 models.storage.save()
             else:
-                print("** no instance found **")
-
+                 print("** no instance found **")
     def emptyline(self):
         '''empty line
         '''
         pass
+
 
 
 if __name__ == '__main__':

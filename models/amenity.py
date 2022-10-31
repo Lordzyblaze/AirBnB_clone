@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-
-"""
-Amenity class that inherits from BaseModel
-
-"""
+"""Amenity class that inherits from BaseModel"""
 from models.base_model import BaseModel
 
 

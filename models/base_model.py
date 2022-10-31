@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Our BaseModel that defines all common attributes/methods for other classes
 
@@ -10,16 +9,9 @@ import models
 
 
 class BaseModel():
-
-    """
-    The main class
-
-    """
+    """The main class"""
     def __init__(self, *args, **kwargs):
-        """
-        Constructor of the instance. Uses kwargs if not empty
-
-        """
+        """Constructor of the instance. Uses kwargs if not empty"""
         if kwargs:
             for key, value in kwargs.items():
                 if key == "__class__":
@@ -34,13 +26,12 @@ class BaseModel():
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             models.storage.new(self)
-
-    def __str__(self):
-        """Return an user friendly representation
-           of the isinstance
-        """
-        return ("[{}] ({}) {}".format(self.__class__.__name__,
-                                      self.id, self.__dict__))
+                                                                                                                                                                                                                                                    def __str__(self):
+    """Return an user friendly representation
+    of the isinstance
+    """
+    return ("[{}] ({}) {}".format(self.__class__.__name__,
+                                  self.id, self.__dict__))
 
     def save(self):
         """Updates the public instance attribute
