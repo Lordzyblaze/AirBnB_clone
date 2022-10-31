@@ -35,7 +35,7 @@ class FileStorage:
             my_dict[key] = value.to_dict()
         with open(FileStorage.__file_path, "w") as myfile:
              json.dump(my_dict, myfile)
-                                                                                                                            def reload(self):
+    def reload(self):
         """Deserializes the JSON file to __objects
         (only if the JSON file (__file_path)
         exists, otherwise, do nothing. The file contains a dictionary
@@ -48,5 +48,5 @@ class FileStorage:
                 class_name = value.get('__class__')
                 obj = eval(class_name + '(**value)')
                 FileStorage.__objects[key] = obj
-                                                                                                                                except FileNotFoundError:
+        except FileNotFoundError:
             pass

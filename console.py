@@ -18,7 +18,9 @@ from models.engine.file_storage import FileStorage
 
 
 class HBNBCommand(cmd.Cmd):
-    """Class for the command interpreter"""
+    """
+    Class for the command interpreter
+    """
     prompt = "(hbnb) "
     allowed_obj = ["BaseModel",
                    "User",
@@ -29,7 +31,9 @@ class HBNBCommand(cmd.Cmd):
                    "State"]
 
     def do_quit(self, args):
-        """Quit command to exit the program\n"""
+        """
+        Quit command to exit the program\n
+        """
         raise SystemExit
 
     def do_EOF(self, args):
@@ -63,7 +67,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """Prints the string representation of an instance
-        based on the class name and id"""
+        based on the class name and id
+        """
         list_str = args.split()
         if not list_str:
             print("** class name missing **")
