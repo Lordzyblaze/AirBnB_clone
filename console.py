@@ -5,6 +5,8 @@ The command interpreter for the Back-End
 """
 
 import cmd
+import json
+import re
 import models
 from shlex import split
 from models.user import User
