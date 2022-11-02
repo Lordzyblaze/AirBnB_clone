@@ -5,8 +5,6 @@ The command interpreter for the Back-End
 """
 
 import cmd
-import json
-import re
 import models
 from shlex import split
 from models.user import User
@@ -34,7 +32,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, args):
         """
+        
         Quit command to exit the program\n
+        
         """
         raise SystemExit
 
@@ -68,8 +68,10 @@ class HBNBCommand(cmd.Cmd):
             print(my_object.id)
 
     def do_show(self, args):
-        """Prints the string representation of an instance
+        """
+        Prints the string representation of an instance
         based on the class name and id
+        
         """
         list_str = args.split()
         if not list_str:
@@ -86,7 +88,8 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
     def do_destroy(self, args):
-        """Deletes an instance based on the class name and id
+        """
+        Deletes an instance based on the class name and id
         (save the change into the JSON file)
 
         """
