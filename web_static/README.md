@@ -1,9 +1,7 @@
 ## Description
 
-This project is the second step towards building a full web application of the AirBnB clone. In this step we are building a static web page.  HTML will constitute the structure of the page while CSS executes the styling of the page.
+This project is the second step towards building a full web application of the AirBnB clone. In this step we are building a static web page.  HTML will constitute the structure of the page while CSS executes the styling of the page.  The below task will be executed:
 
-
-## Tasks Executed:
 
 
 ## 0. Inline styling
